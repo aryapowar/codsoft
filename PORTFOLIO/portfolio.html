@@ -1,4 +1,10 @@
-/* Reset and basic styles */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARYAN POWAR | Frontend Web Developer</title>
+    <style>
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +19,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Header and Navigation */
 header {
     background-color: #0b0c10;
     padding: 1rem;
@@ -57,10 +62,9 @@ nav {
     transform: translateY(-2px);
 }
 
-/* Hero Section */
 .hero {
     background:
-        url('/codsoft intern/PORTFOLIO/media/images/back.jpg') center/cover no-repeat;
+        url('/PORTFOLIO/media/images/back.jpg') center/cover no-repeat;
     text-align: center;
     padding: 6rem 1rem;
     animation: fadeIn 2.5s ease-in-out;
@@ -116,7 +120,7 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* About Section */
+
 #about {
     padding: 4rem 1rem;
     text-align: center;
@@ -133,11 +137,11 @@ h2 {
     transition: all;
 }
 
-/* Projects Section */
+
 #projects {
     padding: 4rem 1rem;
     background:
-        url('/codsoft intern/PORTFOLIO/media/images/about.jpg') center/cover no-repeat;
+        url('/PORTFOLIO/media/images/about.jpg') center/cover no-repeat;
     text-align: center;
     padding: 6rem 1rem;
     animation: fadeIn 2.5s ease-in-out;
@@ -188,7 +192,7 @@ h2 {
     color: #45a29e;
 }
 
-/* Contact Section */
+
 #contact {
     padding: 4rem 1rem;
     text-align: center;
@@ -209,7 +213,7 @@ h2 {
     color: #45a29e;
 }
 
-/* Footer */
+
 footer {
     background-color: #0b0c10;
     color: #e0e0e0;
@@ -229,7 +233,6 @@ footer {
     color: #45a29e;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -239,7 +242,7 @@ footer {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -268,20 +271,6 @@ footer {
     }
 }
 
-/*@media (max-width: 480px) {
-    .owner-image {
-        width: 140px;
-        height: 140px;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .cta-button {
-        padding: 0.6rem 1.5rem;
-    }
-}*/
 @media(max-width:995px){
     .home{
         flex-direction: column;
@@ -301,3 +290,70 @@ footer {
         margin-top: 4rem;
     }
 }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ARYAN POWAR</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="/PORTFOLIO/media/images/main.jpg" alt="ARYAN POWAR" class="owner-image">
+            <h1>Hi, I'm ARYAN POWAR</h1>
+            <p>Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product</p>
+            <a href="#contact" class="cta-button">Hire Me</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a passionate developer and problem solver who loves turning ideas into clean, efficient, and impactful code. With experience in Python, JavaScript, Flask, React, SQL, Web development. I enjoy building projects that not only work well but also provide a seamless user experience.
+
+My portfolio highlights a range of projects from  web applications and automation scripts to data-driven tools and interactive designs each reflecting my curiosity, creativity, and commitment to writing code that makes a difference.</p>
+       <h2 id="resume"><center>Resume</center></h2>
+            <a href="/PORTFOLIO/media/images/resume.jpg" download="cta-button">Download Resume</a>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>VCK-Project</h3>
+                <p>A multi-page website for a college admission system with a chatbot, built for students who to get admissionin vivekanand college Kolhapur which prvide better user experience and give responsive experience across devices.</p>
+                <a href="https://vck-ojt-project-hazel.vercel.app/" class="project-link">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>PORTFOLIO</h3>
+                <p>A simple and clean single-page portfolio website containing my information, Projects that i have been working on.</p>
+                <a href="https://codsoft-phi-seven.vercel.app/" class="project-link">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: aryapowar.10@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/aryan-powar-793a87372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">in/aryanpowar</a></p>
+        <p>GitHub: <a href="https://github.com/aryapowar">github.com/aryapowar</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ARYAN POWAR. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/aryan-powar-793a87372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+            <a href="https://github.com/aryapowar">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
