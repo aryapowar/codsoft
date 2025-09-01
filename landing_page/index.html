@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+header {
+  background: rgba(30, 41, 59, 0.95);
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeIn 1s ease-in;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo span {
+  color: #38bdf8;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin-left: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #38bdf8;
+}
+
+.hero {
+  background: url("https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1400&q=80")
+              no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(14,165,233,0.6);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #1e293b;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #0f172a;
+}
+
+.about {
+  background: url("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=1400&q=80")
+               no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+.about h2, .about p {
+  position: relative;
+  z-index: 1;
+}
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #38bdf8;
+  animation: slideInLeft 1.2s ease-in-out;
+}
+.about p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.skills {
+  background: #7ea4ca;
+  color: #222;
+  padding: 70px 20px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.skills h2 {
+  color: #005f88;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  animation: fadeInUp 1.2s;
+}
+.skills-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+.skill {
+  margin-bottom: 22px;
+}
+.skill span {
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.skill-bar {
+  background: #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 22px;
+}
+.skill-level {
+  background: #38bdf8;
+  color: #fff;
+  height: 100%;
+  line-height: 22px;
+  padding-left: 12px;
+  border-radius: 8px 0 0 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  animation: fadeIn 1.2s;
+}
+
+.services {
+  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80")
+              no-repeat center center/cover;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(30,41,59,0.7);
+}
+.services h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+  color: #38bdf8;
+  animation: slideInRight 1.2s ease-in-out;
+}
+.service-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.service-box {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+.service-box:hover {
+  transform: translateY(-8px);
+}
+.service-box h3 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.cta {
+  background: url("https://images.unsplash.com/photo-1522204705097-66b61a89b7d7?auto=format&fit=crop&w=1400&q=80")
+              no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+.cta p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #fff;
+  animation: slideInLeft 1.2s ease-in;
+
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(14,165,233,0.7);
+}
+.cta h2, .cta .btn , .cta p {
+  position: relative;
+  z-index: 1;
+}
+.cta h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  animation: fadeInUp 1.3s ease-in-out;
+}
+
+footer {
+  background: #1e293b;
+  color: #fff;
+  text-align: center;
+  padding: 25px 15px;
+  animation: fadeIn 1.2s ease-in;
+}
+footer .socials a {
+  color: #38bdf8;
+  text-decoration: none;
+  margin: 0 5px;
+}
+footer .socials a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <h2 class="logo">ARYA<span>Web</span></h2>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Build Something Amazing</h1>
+      <p>I can create stunning websites with modern design, clean code, and perfect user experience.</p>
+      <a href="#contact" class="btn">About Me</a>
+    </div>
+  </section>
+
+  <section id="about" class="about ">
+    <h2>About Me</h2>
+    <p>
+      I am a creative developer , my main is focuse on crafting visually appealing and user-friendly websites.
+      My ultimate goal is to combine innovation with usability, ensuring that your digital presence leaves
+      a lasting impression.
+    </p>
+  </section>
+
+  <section id="skills" class="skills ">
+  <h2>My Skills</h2>
+  <div class="skills-list">
+    <div class="skill">
+      <span>HTML</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 95%;">95%</div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>CSS</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 90%;">90%</div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 85%;">85%</div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>DBMS</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 75%;">75%</div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>Python</span>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 80%;">80%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <section id="services" class="services">
+    <div class="container">
+      <h2>My Services</h2>
+      <div class="service-grid">
+        <div class="service-box">
+          <h3>Web Design</h3>
+          <p>Modern, responsive, and interactive designs tailored to your needs.</p>
+        </div>
+        <div class="service-box">
+          <h3>Development</h3>
+          <p>Clean, manageable, and efficient code for smooth performance.</p>
+        </div>
+        <div class="service-box">
+          <h3>Build in you as wish</h3>
+          <p>will create web app in your preferred language</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to start your journey?</h2>
+    <a href="#contact" class="btn">Contact Us</a>
+        <p>Email: <email>aryapowar.10@gmail.com</email></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/aryan-powar-793a87372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">in/aryanpowar</a></p>
+        <p>GitHub: <a href="https://github.com/aryapowar">github.com/aryapowar</a></p>
+    
+  </section>
+
+  
+  <footer id="contact">
+    <div class="container footer-content">
+      <p>&copy; 2025 ARYAWeb. All Rights Reserved.</p>
+      <div class="socials">
+        <a href="#">Facebook</a> |
+        <a href="https://github.com/aryapowar">GitHub</a> |
+        <a href="https://www.linkedin.com/in/aryan-powar-793a87372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
